@@ -1,3 +1,4 @@
+*.aab
 .gradle
 .DS_Store
 .idea
@@ -10,3 +11,4 @@ Gemfile.lock
 _site/
 *.jks
 *.pepk
+gif2webp

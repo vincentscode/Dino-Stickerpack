@@ -10,8 +10,8 @@ android {
         applicationId "de.vincentscode.stickerapp"
         minSdkVersion 15
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -48,7 +48,7 @@ android {
 
 
 tasks.whenTaskAdded { task ->
-    println(task.name)
+    // println(task.name)
 }
 
 

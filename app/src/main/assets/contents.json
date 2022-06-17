@@ -357,82 +357,87 @@
       "name": "Dinos 4",
       "publisher": "MetalpigMii",
       "tray_image_file": "bongodino.webp",
-      "image_data_version": "1",
+      "image_data_version": "2",
       "avoid_cache": false,
       "publisher_email": "",
       "publisher_website": "https://www.twitch.tv/metalpigmii",
       "privacy_policy_website": "",
       "license_agreement_website": "",
-      "stickers": [{
-        "image_file": "bongodino.webp",
-        "emojis": ["\uD83E\uDD41"]
-      }, {
-        "image_file": "dinoangrylurk.webp",
-        "emojis": ["\uD83D\uDE20"]
-      }, {
-        "image_file": "dinoangwy.webp",
-        "emojis": ["\uD83D\uDE21"]
-      }, {
-        "image_file": "dinobonkbonk.webp",
-        "emojis": ["⚒️"]
-      }, {
-        "image_file": "dinobonkschn.webp",
-        "emojis": ["\uD83D\uDD28"]
-      }, {
-        "image_file": "dinodancesmooth.webp",
-        "emojis": ["\uD83D\uDC83"]
-      }, {
-        "image_file": "dinofacepalm.webp",
-        "emojis": ["\uD83E\uDD26"]
-      }, {
-        "image_file": "dinokeinbockmehr2.webp",
-        "emojis": ["\uD83D\uDE11"]
-      }, {
-        "image_file": "dinokopftisch.webp",
-        "emojis": ["\uD83E\uDE91"]
-      }, {
-        "image_file": "dinopizzanoms.webp",
-        "emojis": ["\uD83C\uDF55"]
-      }, {
-        "image_file": "dinopizzanomsk.webp",
-        "emojis": ["\uD83C\uDF55"]
-      }, {
-        "image_file": "dinosalatnoms.webp",
-        "emojis": ["\uD83E\uDD57"]
-      }, {
-        "image_file": "dinosleepy.webp",
-        "emojis": ["\uD83D\uDCA4"]
-      }, {
-        "image_file": "dinostabbystabstab.webp",
-        "emojis": ["\uD83D\uDDE1"]
-      }, {
-        "image_file": "dinotailwag.webp",
-        "emojis": ["\uD83D\uDC15"]
-      }, {
-        "image_file": "dinothisisfine.webp",
-        "emojis": ["\uD83D\uDD25"]
-      }, {
-        "image_file": "dinovibin.webp",
-        "emojis": ["\uD83C\uDFB5"]
-      }, {
-        "image_file": "dinowanthug.webp",
-        "emojis": ["\uD83D\uDE14"]
-      }, {
-        "image_file": "dinowanthugk.webp",
-        "emojis": ["\uD83D\uDE14"]
-      }, {
-        "image_file": "dinowantlove.webp",
-        "emojis": ["\uD83D\uDE14"]
-      }, {
-        "image_file": "dinowatschel.webp",
-        "emojis": ["\uD83D\uDEB6"]
-      }, {
-        "image_file": "regenbogenpup2.webp",
-        "emojis": ["\uD83D\uDCA8"]
-      }, {
-        "image_file": "regenbogenpups.webp",
-        "emojis": ["\uD83D\uDCA8"]
-      }]
+      "stickers": [
+        {
+          "image_file": "bongodino.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinoangrylurk.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinoangwy.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinobonkschn.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinodancesmooth.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinoderp.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinofacepalm.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinofeier.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinohugattack.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinokeinbockmehr2.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinokopftisch.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinopfft.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinopizzanoms.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinosalatnoms.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinosleepy.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinostabbystabstab.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinotailwag.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinothisisfine.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinovibin.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinowanthug.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinowantlove.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "dinowatschel.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "regenbogenpup2.webp",
+          "emojis": ["\ud83e\udd95"]
+        }, {
+          "image_file": "unidino sparkle.webp",
+          "emojis": ["\ud83e\udd95"]
+        }
+      ]
     }
   ]
 }
