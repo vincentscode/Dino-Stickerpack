@@ -53,13 +53,13 @@ jobs:
         run: echo "apkfile=$(find src/app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
       
       - name: Upload release file aab
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-bundle
           path: ${{ steps.releaseAab.outputs.aabfile }}
     
       - name: Upload release file apk
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: ${{ steps.releaseApk.outputs.apkfile }}
