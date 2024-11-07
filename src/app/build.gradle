@@ -3,9 +3,13 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         release {
-            storeFile file('/home/vincent/Downloads/Dino-Stickerpack/key.pepk')
+            storeFile = file("../../key.jks")
+            storePassword System.getenv("SIGNING_STORE_PASSWORD")
+            keyAlias System.getenv("SIGNING_KEY_ALIAS")
+            keyPassword System.getenv("SIGNING_KEY_PASSWORD")
         }
     }
+
     defaultConfig {
         applicationId "de.vincentscode.stickerapp"
         minSdkVersion 21
@@ -23,6 +27,7 @@ android {
                 "CONTENT_PROVIDER_AUTHORITY",
                 "\"${contentProviderAuthority}\"")
     }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -32,18 +37,22 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility = "17"
         targetCompatibility = "17"
     }
+
     packagingOptions {
         jniLibs {
             excludes += ['lib/*/libnative-imagetranscoder.so', 'lib/*/libnative-filters.so']
         }
     }
+
     androidResources {
         noCompress 'webp'
     }
@@ -52,6 +61,7 @@ android {
     buildFeatures {
         buildConfig true
     }
+
     compileSdk 35
     buildToolsVersion '35.0.0'
 }

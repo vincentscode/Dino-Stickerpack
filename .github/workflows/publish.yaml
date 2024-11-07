@@ -1,0 +1,58 @@
+name: Build Release App Bundle
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Decode Keystore
+        env:
+            ENCODED_STRING: ${{ secrets.KEYSTORE }}
+        run: echo $ENCODED_STRING | base64 -di > key.jks
+        
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        working-directory: src
+
+      - name: Build Release apk
+        env:
+          RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          RELEASE_KEYSTORE_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+        run: ./gradlew assembleRelease --stacktrace
+        working-directory: src
+
+      - name: Build Release bundle
+        env:
+          RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          RELEASE_KEYSTORE_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+        run: ./gradlew bundleRelease --stacktrace
+        working-directory: src
+
+      - name: Get release file aab path
+        id: releaseAab
+        run: echo "aabfile=$(find src/app/build/outputs/bundle/release/*.aab)" >> $GITHUB_OUTPUT
+
+      - name: Get release file apk path
+        id: releaseApk
+        run: echo "apkfile=$(find src/app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
+      
+      - name: Upload release file aab
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-bundle
+          path: ${{ steps.releaseAab.outputs.aabfile }}
+    
+      - name: Upload release file apk
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: ${{ steps.releaseApk.outputs.apkfile }}
