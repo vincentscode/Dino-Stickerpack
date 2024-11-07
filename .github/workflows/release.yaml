@@ -32,14 +32,14 @@ jobs:
         env:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
           RELEASE_KEYSTORE_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-        run: ./gradlew assembleRelease --stacktrace
+        run: ./gradlew assembleRelease --stacktrace --no-daemon
         working-directory: src
 
       - name: Build Release bundle
         env:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
           RELEASE_KEYSTORE_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-        run: ./gradlew bundleRelease --stacktrace
+        run: ./gradlew bundleRelease --stacktrace --no-daemon
         working-directory: src
 
       - name: Get release file aab path
