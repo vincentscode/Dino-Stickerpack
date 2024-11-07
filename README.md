@@ -16,3 +16,5 @@
 * Use [squoosh](https://squoosh.app/), an online browser tool, by the Google Chrome Labs
 
 * The sticker must be added to `src/app/src/main/assets/<sticker-pack-index>` folder and the `contents.json` file must be updated with the new sticker details.
+
+* The `image_data_version` of all packs should always match the app version. This is to ensure that the app can detect if there are new stickers to download.
