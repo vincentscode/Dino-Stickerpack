@@ -24,6 +24,6 @@ jobs:
         run: chmod +x ./gradlew
         working-directory: src
 
-      - name: Build
-        run: ./gradlew build --stacktrace --no-daemon
+      - name: Build Debug apk
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
         working-directory: src
