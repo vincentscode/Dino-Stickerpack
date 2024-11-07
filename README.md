@@ -1,4 +1,4 @@
-# Dino Stickerpack for WhatsApp.
+# Dino Stickerpack for WhatsApp
 
 ## Adding new stickers
 

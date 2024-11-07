@@ -86,7 +86,7 @@ public class EntryActivity extends BaseActivity {
                 final Context context = contextWeakReference.get();
                 if (context != null) {
                     stickerPackList = StickerPackLoader.fetchStickerPacks(context);
-                    if (stickerPackList.size() == 0) {
+                    if (stickerPackList.isEmpty()) {
                         return new Pair<>("could not find any packs", null);
                     }
                     for (StickerPack stickerPack : stickerPackList) {

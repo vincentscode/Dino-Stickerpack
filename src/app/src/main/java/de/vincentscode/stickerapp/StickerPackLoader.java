@@ -78,7 +78,7 @@ class StickerPackLoader {
             final byte[] bytes;
             try {
                 bytes = fetchStickerAsset(stickerPack.identifier, sticker.imageFileName, context.getContentResolver());
-                if (bytes.length <= 0) {
+                if (bytes.length == 0) {
                     throw new IllegalStateException("Asset file is empty, pack: " + stickerPack.name + ", sticker: " + sticker.imageFileName);
                 }
                 sticker.setSize(bytes.length);
