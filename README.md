@@ -18,3 +18,11 @@
 * The sticker must be added to `src/app/src/main/assets/<sticker-pack-index>` folder and the `contents.json` file must be updated with the new sticker details.
 
 * The `image_data_version` of all packs should always match the app version. This is to ensure that the app can detect if there are new stickers to download.
+
+## Releasing a new version
+
+* Update the `image_data_version` in `src/app/src/main/assets/contents.json` to the new version number.
+* Update the `versionCode` and `versionName` in `src/app/build.gradle` to the new version number.
+* Commit and push the changes to the `master` branch.
+* Create a new release on GitHub with the new version number and attach the APK and AAB files from the most recent action run.
+* Create a new release on the Play Store with the new version number and attach the AAB file from the most recent action run.
