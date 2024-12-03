@@ -10,39 +10,35 @@ on:
 
 jobs:
   analyze:
-    name: Analyze (${{ matrix.language }})
+    name: Analyze Java / Kotlin
     runs-on: 'ubuntu-latest'
     permissions:
       security-events: write
       packages: read
       actions: read
       contents: read
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-        - language: java-kotlin
-          build-mode: autobuild
-    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-        languages: ${{ matrix.language }}
-        build-mode: ${{ matrix.build-mode }}
-    - if: matrix.build-mode == 'manual'
-      shell: bash
-      run: |
-        echo 'If you are using a "manual" build mode for one or more of the' \
-          'languages you are analyzing, replace this with the commands to build' \
-          'your code, for example:'
-        echo '  make bootstrap'
-        echo '  make release'
-        exit 1
+        languages: java-kotlin
+        build-mode: manual
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: 17
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+      working-directory: src
+    - name: Build Debug apk
+      run: ./gradlew assembleDebug --stacktrace --no-daemon
+      working-directory: src
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
-        category: "/language:${{matrix.language}}"
+        category: "/language:java-kotlin"
