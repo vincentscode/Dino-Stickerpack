@@ -79,5 +79,5 @@ dependencies {
     implementation "com.facebook.fresco:fresco:3.4.0"
     implementation "com.facebook.fresco:webpsupport:3.5.0"
     implementation "com.facebook.fresco:animated-webp:3.5.0"
-    implementation "com.facebook.fresco:animated-base:3.4.0"
+    implementation "com.facebook.fresco:animated-base:3.5.0"
 }
