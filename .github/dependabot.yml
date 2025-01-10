@@ -5,7 +5,7 @@ updates:
       - "/src/**/*"
     schedule:
       interval: "daily"
-  groups:
-    com.facebook.fresco:
-      patterns: 
-      - "com.facebook.fresco:*"
+    groups:
+      com.facebook.fresco:
+        patterns: 
+         - "com.facebook.fresco:*"
