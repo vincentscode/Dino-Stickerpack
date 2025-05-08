@@ -19,6 +19,10 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        working-directory: src
+
       - name: Update Gradle Wrapper to 8.10.2
         run: ./gradlew wrapper --gradle-version 8.10.2
         working-directory: src
@@ -28,10 +32,6 @@ jobs:
             ENCODED_STRING: ${{ secrets.KEYSTORE }}
         run: echo $ENCODED_STRING | base64 -di > key.jks
         
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-        working-directory: src
-
       - name: Build Release apk
         env:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
