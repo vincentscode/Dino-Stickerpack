@@ -32,11 +32,11 @@ jobs:
         java-version: 17
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-    - name: Update Gradle Wrapper to 8.10.2
-      run: ./gradlew wrapper --gradle-version 8.10.2
-      working-directory: src
     - name: Make gradlew executable
       run: chmod +x ./gradlew
+      working-directory: src
+    - name: Update Gradle Wrapper to 8.10.2
+      run: ./gradlew wrapper --gradle-version 8.10.2
       working-directory: src
     - name: Build Debug apk
       run: ./gradlew assembleDebug --stacktrace --no-daemon
