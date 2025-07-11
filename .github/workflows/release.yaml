@@ -22,7 +22,7 @@ jobs:
         run: chmod +x ./gradlew
         working-directory: src
       - name: Update Gradle Wrapper
-        run: ./gradlew wrapper --gradle-version 8.11.1
+        run: ./gradlew wrapper
         working-directory: src
       - name: Decode Keystore
         env:
