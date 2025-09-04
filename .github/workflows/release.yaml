@@ -18,20 +18,16 @@ jobs:
           java-version: 17
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-
       - name: Make gradlew executable
         run: chmod +x ./gradlew
         working-directory: src
-
-      - name: Update Gradle Wrapper to 8.10.2
-        run: ./gradlew wrapper --gradle-version 8.10.2
+      - name: Update Gradle Wrapper
+        run: ./gradlew wrapper
         working-directory: src
-
       - name: Decode Keystore
         env:
             ENCODED_STRING: ${{ secrets.KEYSTORE }}
         run: echo $ENCODED_STRING | base64 -di > key.jks
-        
       - name: Build Release apk
         env:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
@@ -39,7 +35,6 @@ jobs:
           RELEASE_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: ./gradlew assembleRelease --stacktrace --no-daemon
         working-directory: src
-
       - name: Build Release bundle
         env:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
@@ -47,21 +42,17 @@ jobs:
           RELEASE_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: ./gradlew bundleRelease --stacktrace --no-daemon
         working-directory: src
-
       - name: Get release file aab path
         id: releaseAab
         run: echo "aabfile=$(find src/app/build/outputs/bundle/release/*.aab)" >> $GITHUB_OUTPUT
-
       - name: Get release file apk path
         id: releaseApk
         run: echo "apkfile=$(find src/app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
-      
       - name: Upload release file aab
         uses: actions/upload-artifact@v4
         with:
           name: release-bundle
           path: ${{ steps.releaseAab.outputs.aabfile }}
-    
       - name: Upload release file apk
         uses: actions/upload-artifact@v4
         with:
