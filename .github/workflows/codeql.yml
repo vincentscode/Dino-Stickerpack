@@ -35,8 +35,8 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./gradlew
       working-directory: src
-    - name: Update Gradle Wrapper to 8.10.2
-      run: ./gradlew wrapper --gradle-version 8.10.2
+    - name: Update Gradle Wrapper
+      run: ./gradlew wrapper
       working-directory: src
     - name: Build Debug apk
       run: ./gradlew assembleDebug --stacktrace --no-daemon

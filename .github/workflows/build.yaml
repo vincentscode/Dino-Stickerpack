@@ -19,23 +19,18 @@ jobs:
           java-version: 17
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-
       - name: Make gradlew executable
         run: chmod +x ./gradlew
         working-directory: src
-
-      - name: Update Gradle Wrapper to 8.10.2
-        run: ./gradlew wrapper --gradle-version 8.10.2
+      - name: Update Gradle Wrapper
+        run: ./gradlew wrapper
         working-directory: src
-
       - name: Build Debug apk
         run: ./gradlew assembleDebug --stacktrace --no-daemon
         working-directory: src
-
       - name: Get apk path
         id: debugApk
         run: echo "apkfile=$(find src/app/build/outputs/apk/debug/*.apk)" >> $GITHUB_OUTPUT
-      
       - name: Upload apk
         uses: actions/upload-artifact@v4
         with:
